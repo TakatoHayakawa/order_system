@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+</head>
+<body>
+    <div class="px-10 py-2 flex items-end justify-between bg-red-200">
+        <div class="font-bold text-3xl">OAの森</div>
+        <div class="flex gap-5 font-bold items-center">
+            <div>販売部</div>
+            <div>たむきち商店</div>
+            <div>まめきち</div>
+            <form method="post" action="{{  }}">
+                <button class="border border-black rounded-3xl px-3 py-2 ml-10 text-white bg-[#2b2b2b]   hover:bg-red-800 " type="submit">Logout</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- conntent -->
+    <div class="w-screen  pt-10">
+        
+        <!-- @csrf -->
+        <div class="pl-10 flex items-center">
+        <a class="border border-black rounded-2xl px-8 py-2 text-white bg-[#2b2b2b]   hover:bg-red-800 " href="{{ route('Home') }}">戻る</a>
+        <button class=" border border-black rounded-2xl   px-3 py-2 ml-5 text-white bg-blue-800   hover:bg-blue-300" type="submit">確認へ進む</button>
+        </div>
+        <div class="flex justify-between items-end px-10 py-2 border-b-2 border-b border-black">
+        <div class="flex items-center">
+            <div>
+                発注先：
+            </div>
+            <select name="factory_id" class="border border-black rounded-lg px-1">
+                <option value="" selected hidden>選択</option>
+            </select>
+        </div>
+        <div class="flex gap-5">
+            <div class="text-right">
+                <div >発注元：</div>
+                <div >発注者：</div>
+                <div >発注日：</div>
+            </div>
+            <div class="text-right">
+                <div >1</div>
+                <div >12</div>
+                <div >123</div>
+            </div>
+        </div>
+        </div>
+        <div class="">
+        <form action="">
+            <button class="mt-10 border border-black rounded-2xl px-3 py-4 ml-14 text-white bg-blue-400 text-xl  hover:bg-blue-800 " type="submit">家具を追加する</button>
+        </form>
+        <div class="w-full flex justify-center">
+            <div class="w-[60vw]">
+                <div class="grid grid-cols-9 border border-black font-bold text-lg">
+                    <!-- グリッド内のコンテンツをここに配置 -->
+                    <div class="grid-item flex justify-center col-span-5">家具名</div>
+                    <div class="grid-item flex justify-center border-x border-black col-span-1">個数</div>
+                    <div class="grid-item flex justify-center border-r border-black col-span-2">値段</div>
+                    <div class="grid-item flex justify-center col-span-1">
+                    </div>
+                </div> 
+                <form action="">
+                    <div class="grid grid-cols-9 border-b border-black text-lg">
+                    <!-- グリッド内のコンテンツをここに配置 -->
+                         <div class="grid-item border-l border-black col-span-5 pl-2 pt-2">家具名</div>
+                         <div class="grid-item flex justify-center border-x border-black col-span-1 pl-2 pt-2">個数</div>
+                         <div class="grid-item flex justify-end border-r border-black col-span-2 pr-2 pt-2">値段</div>
+                         <div class="grid-item flex justify-center border-r border-black col-span-1">
+                             <button class="text-sm border border-black rounded-lg text-white px-2 my-1 bg-blue-400 hover:bg-blue-800 te">編集</button>
+                         </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+
+        <form  method="POST" action="{{ route('OrderCheck') }}">
+
+        </form>
+    </div>
+
+    
+</body>
+</html>

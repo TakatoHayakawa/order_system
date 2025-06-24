@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+</head>
+<body>
+    <div class="px-10 py-2 flex items-end justify-between bg-red-200">
+        <div class="font-bold text-3xl">OAの森</div>
+        <div class="flex gap-5 font-bold items-center">
+            <div>販売部</div>
+            <div>たむきち商店</div>
+            <div>まめきち</div>
+            <form method="post" action="{{  }}">
+                <button class="border border-black rounded-3xl px-3 py-2 ml-10 text-white bg-[#2b2b2b]   hover:bg-red-800 " type="submit">Logout</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- conntent -->
+    <div class="w-screen pt-10">
+
+            <div>
+                <div class="pl-10 flex items-center">
+                    <a class=" border border-black rounded-2xl px-8 py-2 text-white bg-[#2b2b2b]   hover:bg-red-800 " href="{{ route('Order') }}">戻る</a>
+                </div>
+            </div>
+
+
+            <div class="">
+                <div class="w-full flex justify-center">
+                    <div class="w-[70vw]">
+                        <div class="grid grid-cols-11 border border-black font-bold text-lg">
+                            <!-- グリッド内のコンテンツをここに配置 -->
+                            <div class="grid-item flex justify-center col-span-3">発注先</div>
+                            <div class="grid-item flex justify-center border-l border-black col-span-3">発注元</div>
+                            <div class="grid-item flex justify-center border-x border-black col-span-3">発注者</div>
+                            <div class="grid-item flex justify-center border-r border-black col-span-2">発注日</div>
+                        </div> 
+                        <a href="">
+                            <div class="grid grid-cols-11 border-b border-black text-lg">
+                                <!-- グリッド内のコンテンツをここに配置 -->
+                                <div class="grid-item border-l border-black col-span-3 pl-2 pt-2">a</div>
+                                <div class="grid-item flex border-l border-black col-span-3 pl-2 pt-2">たぬき商店</div>
+                                <div class="grid-item flex border-x border-black col-span-3 pl-2 pt-2">12</div>
+                                <div class="grid-item flex border-r border-black col-span-2 pr-2 pt-2">123ベル</div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="grid grid-cols-8 border-b border-black text-lg">
+                                <!-- グリッド内のコンテンツをここに配置 -->
+                                <div class="grid-item border-l border-black col-span-3 pl-2 pt-2">a</div>
+                                <div class="grid-item flex border-x border-black col-span-3 pl-2 pt-2">12</div>
+                                <div class="grid-item flex border-r border-black col-span-2 pr-2 pt-2">123ベル</div>
+                            </div>
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+
+        
+    </div>
+
+
+    
+</body>
+</html>

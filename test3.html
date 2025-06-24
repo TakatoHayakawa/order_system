@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+</head>
+<body>
+    <div class="px-10 py-2 flex items-end justify-between bg-red-200">
+        <div class="font-bold text-3xl">OAの森</div>
+        <div class="flex gap-5 font-bold items-center">
+            <div>販売部</div>
+            <div>たむきち商店</div>
+            <div>まめきち</div>
+            <form method="post" action="{{  }}">
+                <button class="border border-black rounded-3xl px-3 py-2 ml-10 text-white bg-[#2b2b2b]   hover:bg-red-800 " type="submit">Logout</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- conntent -->
+    <div class="w-screen  pt-10 ">
+        <a class="ml-5 border border-black rounded-2xl px-8 py-2 text-white bg-[#2b2b2b]   hover:bg-red-800 " href="{{ route('Home') }}">戻る</a>
+
+    </div>
+    <div class="pt-10 pl-10  fixed w-screen">
+        <form action="" class="">
+                <div class="flex-wrap">
+                    <div class="flex text-3xl">
+                        <div class="">家具名　：</div>
+                        <input type="text" readonly style="pointer-events: none;" class="font-bold bg-opacity-0" value="イス" id="check_furniture_name" name="furniture_name">
+                    </div>
+                    <div class="flex text-3xl">
+                        <div class="">値段　　：</div>
+                        <div class=" font-bold" id="check_furniture_price">4000</div>
+                    </div>
+                    <div class="flex text-3xl">
+                        <div class="">個数　　：</div>
+                        <input type="number" oninput="inputChange()" class=" no-spin rounded-lg w-[50px] text-end px-1 border border-black" value="1" id="check_furniture_num" name="furniture_num">
+                    </div>
+                </div>
+            <div class="flex items-end">
+                <div class="flex text-3xl">
+                    <div class="">合計金額：</div>
+                    <input type="text" readonly style="pointer-events: none;" class="font-bold w-[150px] bg-opacity-0" value="0" id="check_furniture_amout" name="furniture_amout">
+                </div>
+                <input type="text" style="display: none;" value="" id="check_furniture_id" name="furniture_id">
+                <button class="ml-5 border border-black rounded-2xl px-8 py-2 text-2xl text-black bg-blue-200 hover:text-white bg-opacity-0   hover:bg-blue-800 ">変更する</button>
+            </div>
+
+            <style>
+                .no-spin::-webkit-inner-spin-button,
+                .no-spin::-webkit-outer-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                    -moz-appearance:textfield;
+                }
+            </style>
+            
+        </form>
+    </div>
+    <script>
+        //変更するelm
+        check_furniture_name  = document.getElementById("check_furniture_name")
+        check_furniture_price = document.getElementById("check_furniture_price")
+        check_furniture_amout = document.getElementById("check_furniture_amout")
+        check_furniture_id    = document.getElementById("check_furniture_id")
+
+        //計算に使用するelm
+        check_furniture_num   = document.getElementById("check_furniture_num")
+
+        target = document.getElementById("1")
+        target.addEventListener("click", ()=>{
+            furniture_name  = target.getElementsByClassName("furniture_name")[0]
+            furniture_price = target.getElementsByClassName("furniture_price")[0]
+
+            //変更する
+            check_furniture_name.value      = furniture_name.innerText
+            check_furniture_price.innerText = furniture_price.innerText
+            check_furniture_amout.value     = furniture_price.innerText * check_furniture_num.value
+            check_furniture_id.value        = "1"
+        })
+
+        check_furniture_num.addEventListener("change", ()=>{
+            furniture_name  = target.getElementsByClassName("furniture_name")[0]
+            furniture_price = target.getElementsByClassName("furniture_price")[0]
+
+            //変更する
+            check_furniture_amout.value = check_furniture_price.innerText * check_furniture_num.value
+        })
+
+        function inputChange(){
+
+            //変更する
+            check_furniture_amout.value = check_furniture_price.innerText * check_furniture_num.value
+        }
+
+
+
+    </script>
+
+    
+</body>
+</html>
